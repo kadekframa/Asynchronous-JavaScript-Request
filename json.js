@@ -8,6 +8,8 @@
 */
 
 // Contoh penggunaan JSON.parse() dan JSON.stringify().
+
+// JSON.parse().
 const jsonString = `{
     "error": false,
     "message": "success",
@@ -30,8 +32,37 @@ const jsonString = `{
     ]
 }`
 
-const data = JSON.parse(jsonString);
+const data = JSON.parse(jsonString);                    // penggunaan JSON.parse().
 
 data.books.forEach((book, index) => {
     console.info(`${index + 1}. ${book.title} (${book.author})`);
 })
+
+
+// JSON.stringify().
+const objectData = {
+    error: false,
+    message: "success",
+    books: [
+        {
+            "id": 1,
+            "title": "Laskar Pelangi",
+            "author": "Andrea Hirata"
+        },
+        {
+            "id": 1,
+            "title": "Filosofi Kopi",
+            "author": "Dewi Lestari"
+        },
+        {
+            "id": 1,
+            "title": "Clean Code",
+            "author": "Robert C Martin"
+        }
+    ]
+}
+
+const dataString = JSON.stringify(objectData);      // penggunaan JSON.stringify().
+
+console.info("");
+console.info(dataString);
